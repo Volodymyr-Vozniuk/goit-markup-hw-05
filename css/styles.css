@@ -501,6 +501,7 @@ input {
 
 .fotter-form {
   display: flex;
+  gap: 24px;
 }
 
 .footer-form-desc {
@@ -517,14 +518,14 @@ input {
   border-radius: 4px;
   width: 264px;
   height: 40px;
-  background-color: #2e2f42;
+  background-color: transparent;
   padding: 8px 16px;
-  color: #fff;
+  color: #ffffff;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-right: 24px;
 }
 
 .footer-input:focus,
@@ -534,11 +535,7 @@ input {
 }
 
 .footer-input::placeholder {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 2;
-  letter-spacing: 0.04em;
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-button {
@@ -551,14 +548,17 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
   border-radius: 4px;
   border: none;
   min-width: 165px;
   height: 40px;
   background-color: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.foorer-form-svg {
   fill: #fff;
+  margin-left: 16px;
 }
 
 .footer-button:hover,

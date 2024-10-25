@@ -600,10 +600,14 @@ input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 24px;
+  padding: 72px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -613,8 +617,10 @@ input {
   border-radius: 50%;
   margin-bottom: 24px;
   background-color: #e7e9fc;
+  padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-button:hover,
@@ -623,13 +629,14 @@ input {
   border: none;
 }
 
+.modal-close-svg {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #2e2f42;
+}
+
 .modal-close-button:hover .modal-close-svg,
 .modal-close-button:focus .modal-close-svg {
   fill: #fff;
-}
-
-.modal-close-svg {
-  fill: #2e2f42;
 }
 
 .modal-title {
@@ -643,23 +650,41 @@ input {
   margin-bottom: 16px;
 }
 
+.modal-label-name {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.modal-input-wraper {
+  position: relative;
+}
+
 .modal-input {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   width: 100%;
   height: 40px;
+  background-color: transparent;
   padding-left: 38px;
-  margin-top: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-input:hover,
 .modal-input:focus {
   border: 1px solid #4d5ae5;
-  outline: none;
+}
+
+.modal-svg-input {
+  fill: #2e2f42;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus + .modal-svg-input {
@@ -699,14 +724,6 @@ input {
 
 .modal-field {
   margin-bottom: 8px;
-  position: relative;
-}
-
-.modal-svg-input {
-  fill: #2e2f42;
-  position: absolute;
-  left: 16px;
-  bottom: 8px;
 }
 
 .modal-textarea {
